@@ -32,3 +32,22 @@ function solution(answers) {
     }
     return answer;
 }
+
+
+function solution(answers) {
+    let answer = [];
+    let answer1 = [1, 2, 3, 4, 5];
+    let answer2 = [2, 1, 2, 3, 2, 4, 2, 5];
+    let answer3 = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5];
+    let temp = [0, 0, 0]
+    for (let i = 0; i < answers.length; i++) {
+        if (answers[i] == answer1[i % 5]) temp[0]++;
+        if (answers[i] == answer2[i % 8]) temp[1]++;
+        if (answers[i] == answer3[i % 10]) temp[2]++;
+    }
+    let a = Math.max(...temp);
+    for (let i = 0; i < temp.length; i++) {
+        if (a == temp[i]) answer.push(i+1);
+    }
+    return answer;
+}

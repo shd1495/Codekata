@@ -4,8 +4,10 @@ function solution(n, lost, reserve) {
     // 체육복이 있어야만 수업에 참여 가능. 최대한 많은 학생이 수업에 참여
     
     // 여분을 가져왔지만 도난당하지 않은 학생들만 모음.
-    const lostStudent = lost.filter(x => !reserve.includes(x)).sort();
-    const reserveStudent = reserve.filter(x => !lost.includes(x)).sort();
+   const lostStudent = lost.filter(x => !reserve.includes(x))
+                            .sort((x,y)=> x - y);
+    const reserveStudent = reserve.filter(x => !lost.includes(x))
+                                  .sort((x,y)=> x - y);
     
     // 전체 학생 수 - 도난당한 학생 = 수업에 참여하는 학생
     let answer = n - lostStudent.length;

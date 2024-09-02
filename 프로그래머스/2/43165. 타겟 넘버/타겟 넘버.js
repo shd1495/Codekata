@@ -3,6 +3,7 @@ function solution(numbers, target) {
     // 스택 방식 사용
     const stack = [{ idx: 0, sum: 0 }];
     
+    // 스택이 빌 때 까지
     while (stack.length > 0) {
         
         const { idx, sum } = stack.pop();

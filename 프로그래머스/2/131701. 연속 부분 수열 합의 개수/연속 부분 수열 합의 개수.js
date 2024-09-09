@@ -1,7 +1,7 @@
 function solution(elements) {
     // 원형 수열
     const circle = elements.concat(elements);
-    // 수열의 합의 가지 수
+    // 수열의 합의 가짓수
     const sequence = new Set();
     
     for (let i = 1; i <= elements.length; i++) {
